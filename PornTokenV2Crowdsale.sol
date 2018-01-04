@@ -57,9 +57,9 @@ contract PornTokenV2Crowdsale {
             balanceOf[msg.sender] += amount;
             amountRaised += amount;
             currentBalance += amount;
-            uint tokenAmount = (amount / price) * 1 ether;
+            uint tokenAmount = amount / price;
             currentTokenAmount -= tokenAmount;
-            tokenReward.transfer(msg.sender, tokenAmount);
+            tokenReward.transfer(msg.sender, tokenAmount * 1 ether);
         }
     }
 
