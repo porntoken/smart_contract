@@ -80,6 +80,9 @@ contract PornTokenV2Crowdsale {
      * Withdraw unusold tokens
      *
      * Deposit unsold tokens to PornToken Account
+     * 
+     * Oops. Forgot to multiply currentTokenAmount * 1 ether
+     * PTWO not sold in the crowdsale will be trapped in this contract
      */
     function returnUnsold() public {
         if (beneficiary == msg.sender) {
@@ -91,6 +94,9 @@ contract PornTokenV2Crowdsale {
      * Withdraw unusold tokens
      *
      * Deposit unsold tokens to PornToken Account 100k Safe
+     * 
+     * Oops. Forgot to multiply tokenAmount * 1 ether
+     * PTWO not sold in the crowdsale will be trapped in this contract
      */
     function returnUnsoldSafe() public {
         if (beneficiary == msg.sender) {
