@@ -48,8 +48,7 @@ contract PornTokenV2Upgrader {
 
     /**
      * Transfer tokens from other address
-     *
-     * Send `_value` tokens to `_to` in behalf of `_from`
+     * Effectively a 4:1 trade from PT to PTWO
      */
     function ptToPtwo() public returns (bool success) {
         
@@ -74,9 +73,9 @@ contract PornTokenV2Upgrader {
     /* PTWO WITHDRAW FUNCTIONS */
     
     /**
-     * Withdraw unusold tokens 10K at a time
+     * Withdraw untraded tokens 10K at a time
      *
-     * Deposit unsold tokens to PornToken Account 100k Safe
+     * Deposit untraded tokens to PornToken Account 100k Safe
      */
     function returnUnsoldSafeSmall() public {
         if (exchanger == msg.sender) {
@@ -86,9 +85,9 @@ contract PornTokenV2Upgrader {
     }
     
     /**
-     * Withdraw unusold tokens 100K at a time
+     * Withdraw untraded tokens 100K at a time
      *
-     * Deposit unsold tokens to PornToken Account 100k Safe
+     * Deposit untraded tokens to PornToken Account 100k Safe
      */
     function returnUnsoldSafeMedium() public {
         if (exchanger == msg.sender) {
@@ -98,9 +97,9 @@ contract PornTokenV2Upgrader {
     }
     
     /**
-     * Withdraw unusold tokens 1M at a time
+     * Withdraw untraded tokens 1M at a time
      *
-     * Deposit unsold tokens to PornToken Account 100k Safe
+     * Deposit untraded tokens to PornToken Account 100k Safe
      */
     function returnUnsoldSafeLarge() public {
         if (exchanger == msg.sender) {
@@ -110,9 +109,9 @@ contract PornTokenV2Upgrader {
     }
     
     /**
-     * Withdraw unusold tokens 10M at a time
+     * Withdraw untraded tokens 10M at a time
      *
-     * Deposit unsold tokens to PornToken Account 100k Safe
+     * Deposit untraded tokens to PornToken Account 100k Safe
      */
     function returnUnsoldSafeXLarge() public {
         if (exchanger == msg.sender) {
@@ -124,9 +123,9 @@ contract PornTokenV2Upgrader {
     /* PT WITHDRAW FUNCTIONS */
     
     /**
-     * Withdraw unusold tokens 10K at a time
+     * Withdraw traded tokens 10K at a time
      *
-     * Deposit unsold tokens to PornToken Account 100k Safe
+     * Deposit traded tokens to PornToken Account 100k Safe
      */
     function returnPtSafeSmall() public {
         if (exchanger == msg.sender) {
@@ -136,9 +135,9 @@ contract PornTokenV2Upgrader {
     }
     
     /**
-     * Withdraw unusold tokens 100K at a time
+     * Withdraw traded tokens 100K at a time
      *
-     * Deposit unsold tokens to PornToken Account 100k Safe
+     * Deposit traded tokens to PornToken Account 100k Safe
      */
     function returnPtSafeMedium() public {
         if (exchanger == msg.sender) {
@@ -148,9 +147,9 @@ contract PornTokenV2Upgrader {
     }
     
     /**
-     * Withdraw unusold tokens 1M at a time
+     * Withdraw traded tokens 1M at a time
      *
-     * Deposit unsold tokens to PornToken Account 100k Safe
+     * Deposit traded tokens to PornToken Account 100k Safe
      */
     function returnPtSafeLarge() public {
         if (exchanger == msg.sender) {
@@ -160,9 +159,9 @@ contract PornTokenV2Upgrader {
     }
     
     /**
-     * Withdraw unusold tokens 10M at a time
+     * Withdraw traded tokens 10M at a time
      *
-     * Deposit unsold tokens to PornToken Account 100k Safe
+     * Deposit traded tokens to PornToken Account 100k Safe
      */
     function returnPtSafeXLarge() public {
         if (exchanger == msg.sender) {
