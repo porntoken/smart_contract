@@ -2,7 +2,7 @@ pragma solidity ^0.4.16;
 
 /**
  * PornTokenV2 PT Upgrader 
- * Converts PT to PTWO on a 1 to 1 basis
+ * Converts PT to PTWO on a 4:1 reverse split basis
  * 
  * The PT user transfering to PTWO must call 
  * The approve(address _spender, uint256 _value) function 
