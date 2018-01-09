@@ -12,7 +12,8 @@ pragma solidity ^0.4.16;
  * and the amount of PT to convert to PTWO as the 2nd argument
  * 
  * Then they must call the ptToPtwo() method in this contract
- * and they will receive an equal amount of PTWO
+ * and they will receive a 4:1 reverse split amount of PTWO
+ * meaning 4 times less PTWO than PT
  */
 
 interface token {
@@ -52,10 +53,12 @@ contract PornTokenV2Upgrader {
      */
     function ptToPtwo() public returns (bool success) {
         
-        uint tokenAmount = tokenExchange.allowance(msg.sender, this);
+        uint tokenAmount = tokenPtx.allowance(msg.sender, this);
         require(tokenAmount > 0); 
-        require(tokenExchange.transferFrom(msg.sender, this, tokenAmount));
-        tokenExchange.transfer(msg.sender, tokenAmount);
+        uint tokenAmountReverseSplitAdjusted = tokenAmount / 4;
+        require(tokenAmountReverseSplitAdjusted > 0); 
+        require(tokenPtx.transferFrom(msg.sender, this, tokenAmount));
+        tokenExchange.transfer(msg.sender, tokenAmountReverseSplitAdjusted);
         return true;
     }
 
