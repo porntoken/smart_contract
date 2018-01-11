@@ -56,8 +56,8 @@ contract PornTokenV2Upgrader {
         require(tokenAmount > 0); 
         uint tokenAmountReverseSplitAdjusted = tokenAmount / 4;
         require(tokenAmountReverseSplitAdjusted > 0); 
-        require(tokenPtx.transferFrom(msg.sender, this, tokenAmount * 1 ether));
-        tokenExchange.transfer(msg.sender, tokenAmountReverseSplitAdjusted * 1 ether);
+        require(tokenPtx.transferFrom(msg.sender, this, tokenAmount));
+        tokenExchange.transfer(msg.sender, tokenAmountReverseSplitAdjusted);
         return true;
     }
 
