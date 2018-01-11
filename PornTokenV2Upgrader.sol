@@ -1,16 +1,20 @@
 pragma solidity ^0.4.16;
 
 /**
- * PornTokenV2 PT Upgrader 
+ * PornTokenV2 PT Upgrader on Ethereum Network: Ropsten Testnet
  * Converts PT to PTWO on a 4:1 reverse split basis
- * 
- * The PT user transferring to PTWO must call 
- * The approve(address _spender, uint256 _value) function 
+ *
+ * The PT user transferring to PTWO must call
+ * The approve(_address_of_this_contract, uint256 _value) function
  * from original token contract: 0x66497A283E0a007bA3974e837784C6AE323447de
- * 
- * ...with the address of this Contract as the first argument 
+ *
+ * NOTE: _value must be expressed in the number of PT you want to convert + 18 zeros
+ * to represent it's 18 decimal places.
+ * So if you want to send 1 PT, do approve(_address_of_this_contract, 1000000000000000000)
+ *
+ * ...with the address of this Contract as the first argument
  * and the amount of PT to convert to PTWO as the 2nd argument
- * 
+ *
  * Then they must call the ptToPtwo() method in this contract
  * and they will receive a 4:1 reverse split amount of PTWO
  * meaning 4 times less PTWO than PT
