@@ -17,6 +17,8 @@ from time import sleep
 # Do not call this script asynchronously from Java.
 #
 # Java: Runtime.getRuntime().exec("python dildo_girl.py command level duration_secs");
+#
+# Depends on: https://github.com/metafetish/lovesense-py
 
 def main():
     command = sys.argv[1];
